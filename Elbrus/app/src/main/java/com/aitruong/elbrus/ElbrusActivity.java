@@ -20,7 +20,6 @@ import com.facebook.login.widget.LoginButton;
 public class ElbrusActivity extends AppCompatActivity {
     private CallbackManager callbackManager;
     private LoginButton fbLoginButton;
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
