@@ -42,8 +42,10 @@ public class ElbrusActivity extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
 
+                 openAlbum();
 
-                Toast.makeText(ElbrusActivity.this, "Login successfull!", Toast.LENGTH_LONG).show();
+
+//                Toast.makeText(ElbrusActivity.this, "Login successfull!", Toast.LENGTH_LONG).show();
 
 
 
@@ -102,10 +104,12 @@ public class ElbrusActivity extends AppCompatActivity {
 //        return super.onOptionsItemSelected(item);
 //    }
 
-    public void openAlbum(View view){
+    public void openAlbum(){
         Intent intent = new Intent(this,AlbumActivity.class);
         startActivity(intent);
     }
+
+
 
 
 }

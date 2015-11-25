@@ -16,14 +16,25 @@ import com.facebook.share.widget.AppInviteDialog;
 
 public class InviteActivity extends AppCompatActivity {
     private CallbackManager CallbackManager;
-    private AppInviteDialog inviteDialog;
-    private AppInviteContent content;
+//    private AppInviteDialog inviteDialog;
+//    private AppInviteContent content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_invite);
+
+        String appLinkUrl, previewImageUrl;
+
+        appLinkUrl = "https://fb.me/878949265557048";
+        previewImageUrl = "http://2.bp.blogspot.com/-99shOruuadw/VQsG2T233sI/AAAAAAAAEi0/noFTxUBh_rg/s1600/appscripts.png";
+
+        AppInviteContent content = new AppInviteContent.Builder()
+                .setApplinkUrl(appLinkUrl)
+                .setPreviewImageUrl(previewImageUrl)
+                .build();
+        AppInviteDialog.show(this, content);
 
 
 
@@ -42,25 +53,25 @@ public class InviteActivity extends AppCompatActivity {
     }
 
 
-    public static void openDialogInvite(final InviteActivity activity)
-    {
-        String appLinkUrl, previewImageUrl;
-
-        appLinkUrl = " https://fb.me/878949265557048";
-        previewImageUrl = "https://www.example.com/my_invite_image.jpg";
-
-        if (AppInviteDialog.canShow())
-        {
-            AppInviteContent content = new AppInviteContent.Builder()
-                    .setApplinkUrl(appLinkUrl)
-                    .setPreviewImageUrl(previewImageUrl)
-                    .build();
-
-            AppInviteDialog appInviteDialog = new AppInviteDialog(activity);
-
-
-            appInviteDialog.show(content);
-        }
-    }
+//    public static void openDialogInvite(final InviteActivity activity)
+//    {
+//        String appLinkUrl, previewImageUrl;
+//
+//        appLinkUrl = " https://fb.me/878949265557048";
+//        previewImageUrl = "https://www.example.com/my_invite_image.jpg";
+//
+//        if (AppInviteDialog.canShow())
+//        {
+//            AppInviteContent content = new AppInviteContent.Builder()
+//                    .setApplinkUrl(appLinkUrl)
+//                    .setPreviewImageUrl(previewImageUrl)
+//                    .build();
+//
+//            AppInviteDialog appInviteDialog = new AppInviteDialog(activity);
+//
+//
+//            appInviteDialog.show(content);
+//        }
+//    }
 
 }

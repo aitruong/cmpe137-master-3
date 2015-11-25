@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
@@ -34,6 +35,14 @@ public class AlbumActivity extends AppCompatActivity {
 
         TextView description = (TextView) findViewById(R.id.userDescription);
         description.setText(data.getUserName() + "'s Album");
+
+        ImageButton fbImageButton = (ImageButton) findViewById(R.id.inviteFriendButton);
+        fbImageButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openInvite();
+            }
+        });
 
         GridView gridview = (GridView) findViewById(R.id.albumGridView);
 
